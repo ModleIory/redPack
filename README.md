@@ -1,6 +1,6 @@
 # 公司前端的语音红包前台的自我重构
 
-**链接**[modle_sherlock](https://github.com/ModleIory/Vueing)  
+**链接**[modle_sherlock](https://github.com/ModleIory/redPack.git)  
 
 ## 目的  
 * 继续嗨起来用vue+vuex+vue-router+vue-resource+vue-touch 熟悉
