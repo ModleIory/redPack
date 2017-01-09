@@ -8,12 +8,15 @@
 
 ## cmd  
 ### 运行测试命令  
+
 1. 安装依赖  
->`npm install`
+> `npm install`
+
 2. 运行  
-> `npm test`  
+>  `npm test`  
+
 3. 编译
-> `npm run build`  
+>  `npm run build`  
 
 ## 哈哈  
 *wow,是微信专用的wow*
