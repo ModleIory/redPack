@@ -62,9 +62,11 @@
 					score:score
 				}).then((msg)=>{
 					if(msg){
-						alert(`client say ${this.$store.state.language} 
+						console.info(`client say ${this.$store.state.language} 
 							and score is ${this.$store.state.score}`)
-
+						this.$route.router.go({
+							name:"result"
+						})
 					}
 				})
 			}

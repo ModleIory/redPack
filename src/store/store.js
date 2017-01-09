@@ -11,6 +11,8 @@ const state = {
 	home_bg:"/assets/img/index_bg.png",
 	state_bg:'/assets/img/state_bg.png',
 	game_bg:"/assets/img/game_bg.png",
+	result_bg:"/assets/img/fianl_bg.png",
+	award_bg:"/assets/img/award_bg.png",
 	sentences:[
 		"你说呢?明知你不在还是会问",
 		"我不愿让你一个人,一人在热海浮沉",
@@ -23,12 +25,20 @@ const state = {
 	},
 	language:"客户之言",
 	score:"客户之分",
-	current_sentence:""
+	current_sentence:"",
+	award_limit:"60",
+	get_red_btn_style:{
+		background:"gray"
+	},
+	permission:false
 }
 const getters = {
 	get_screenStyle(state){
 		// console.info(`${state.sentences.length*100}%`)
 		return {width:`${state.sentences.length*100}%`}
+	},
+	tip_language_deal(state){
+		return state.award_limit<state.score?"恭喜您达标,快快领取奖励吧!":"很遗憾,请再尝试尝试吧!"
 	}
 }
 const mutations = {
@@ -46,6 +56,12 @@ const mutations = {
 	},
 	[m_types.CURRENT_SENTENCE_SAVE](state,payload){
 		state.current_sentence = payload.sentence
+	},
+	[m_types.PERMISSION_CHANGE](state){
+		state.permission = true
+		state.get_red_btn_style = {
+			background:'red'
+		}
 	}
 }
 const actions = {
@@ -65,6 +81,9 @@ const actions = {
 		context.commit(m_types.CURRENT_SENTENCE_SAVE,{
 			sentence:payload.sentence
 		})
+	},
+	[a_types.allow_permission]({commit}){
+		commit(m_types.PERMISSION_CHANGE)
 	}
 }
 

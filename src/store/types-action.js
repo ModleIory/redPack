@@ -7,3 +7,5 @@ export const start_touch = "start_touch"
 export const end_touch = "end_touch"
 //储存当前的滑到的句子
 export const save_cur_sentence = "save_cur_sentence"
+//可以领取红包了
+export const allow_permission = "allow_permission"
